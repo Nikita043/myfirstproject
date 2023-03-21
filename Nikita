@@ -1,0 +1,122 @@
+from random import randint
+music = []
+
+
+
+def print_label(name):
+    print("привет!" ,name, "я твой личный бот")
+
+def print_rek(ganre,song):
+    print("Настройка завершена")
+    print("Ваш любимый жанр:",ganre)
+    print("ваш любимый стиль музыки",song)
+
+
+def calculate(operation,a,b):
+    if operation=='+':
+        return a+b
+    elif operation=='-':
+        return a-b
+    elif operation=='*':
+        return a*b
+    elif operation=='/':
+        return a/b
+    elif operation == "//":
+        return a//b
+    elif operation =="%":
+        return a%b
+
+def print_song():
+      rok = ["батарейка","рам Штайн","Пацаны"]
+      print_rok = randint(0,len(rok)-1)
+      song = input("Введите любимый жанр псени\n")
+      if song == "рок":
+        print(rok[print_rok])
+      elif song == "поп":
+        print("Послушай Батарейку")
+      elif song == "рэп":
+        print("Послушай Диалоги тет а тет")
+      elif song == "джаз":
+        print("Послушай когда дюны поют")
+      elif song == "классика":
+        print("Послушай Сонату для скрипки")
+      else:
+        print("Больше не знаю")
+
+def print_ganre():
+      ganre = input("Введите любимый жанр фильма\n")
+      if ganre == "боевик":
+        print("Посмотри Крепкий орешек")
+      elif ganre == "драмма":
+        print("Посмотри Зеленая Миля")
+      elif ganre == "комедия":
+        print("Посмотри Американский пирог")
+      elif ganre == "фэнтези":
+        print("Посмотри Хроники нарнии")
+      elif ganre == "детектив":
+        print("Посмотри Убийство в восточном экспрессе")
+      elif ganre == "ужасы":
+        print("Посмотри Оно")
+      else:
+        print("Не знаю такого")
+
+def print_know():
+      print("Выберите правильный вариант.корень из 289..а)19 б)18 в)17")
+      c = input("Ответ:")
+      if  c == "в":
+        print("да")
+      else:
+        print("Повезет в другой раз")
+
+def print_play():
+      print("Выберите правильный вариант. Столица Бразилии...а)Москва б)Бразилиа в)Финляндия")
+      b = input("Ответ:")
+      if b =="б":
+        print("да")
+      else:
+        print("Повезет в другой раз")
+
+name = input("Введите свое имя\n")
+print_label(name)
+a = input(name + " ,выберите функцию: хочу поиграть, мне грустно, проверка знаний, хочу фокус, предпочтение, калькулятор, хватит\n")
+while a != "хватит":
+
+  if a =="предпочтение":
+    answer = input('Какое предпочтение вы бы хотели узнать? фильм или музыку?')
+
+    if answer=='фильм':
+      print_ganre()
+
+    elif answer == "музыка":
+      print_song()
+      
+
+  elif a =="хочу поиграть":
+    print_play()
+      
+  elif a == "мне грустно":
+    print("шутка: Современные двухлетки могут разблокировать смартфон и войти в интернет. Я же в их возрасте просто ел песок.")
+
+  elif a =="проверка знаний":
+    print_know()
+      
+  elif a =="хочу фокус":
+    focus= input("Введите слово")
+    for i in (focus):
+      print(i)
+
+  elif a =="калькулятор":
+    operation = input('\n\nПривет, я простой калькулятор на Python, со мной ты можешь:\n+ - сложить,\n- - вычесть,\n* - умножение\n/ - деление,\n% - деление с остатком\n// - деление нацело\nВведи операцию, которую ты хочешь выполнить: ')
+    operations=['+', '-', '/', '*',"%","//"]
+    if operation in operations:
+        a=int(input('Введите первое число: '))
+        b=int(input('Введите второе число: '))
+        print(calculate(operation,a,b))
+    else:
+      print("не понимаю")
+
+  else:
+    print("Извини, не понимаю")
+  a = input("Выберите функцию: хочу поиграть, мне грустно, проверка знаний, хочу фокус, предпочтение, калькулятор\n")
+
+print("Пока")
